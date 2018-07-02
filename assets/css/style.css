@@ -1,0 +1,307 @@
+/* --------------------------------------------------
+[Main Stylesheet]
+    Template:   MIA
+    Version:    1.0
+    Author:     CreativeLibrary
+    URL:        http://cagrioz.com/html/rache
+-------------------------------------------------- */
+
+/* ================ TABLE OF CONTENT ================
+
+# Fonts
+# Reset CSS
+# General Styling
+# Layouts
+# Hover Settings
+# Rache Header
+
+================================================== */
+
+/* =============== Fonts =============== */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lato|Montserrat:100,200,300,600,700|Playfair+Display:400i');
+
+@font-face {
+    font-family: 'GothamPro';
+    src: url(fonts/GothamPro.otf) format('OpenType');
+    src: url(fonts/GothamPro.ttf) format('truetype');
+    src: url(fonts/GothamPro.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'GothamPro';
+    src: url(fonts/GothamPro-Medium.otf) format('OpenType');
+    src: url(fonts/GothamPro-Medium.ttf) format('truetype');
+    src: url(fonts/GothamPro-Medium.woff) format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'GothamPro';
+    src: url(fonts/GothamPro-Bold.otf) format('OpenType');
+    src: url(fonts/GothamPro-Bold.ttf) format('truetype');
+    src: url(fonts/GothamPro-Bold.woff) format('woff');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Rage';
+    src: url(fonts/RageItalic.ttf) format("truetype");
+    src: url(fonts/RageItalic.woff) format("woff");
+}
+
+/* =============== Reset CSS =============== */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* =============== General Styling =============== */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+}
+
+body {
+    float: left;
+    width: 100%;
+    position: relative;
+    font-family: 'GothamPro', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing:  		antialiased;
+    z-index: 9999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'GothamPro', sans-serif;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+    line-height: 15px;
+    color: #606060;
+    letter-spacing: 0;
+    word-spacing: 1.5px;
+}
+
+a {
+	color: #282727;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: inherit;
+}
+
+a,
+button,
+input {
+    -webkit-transition: all .3s ease-in-out;
+    transition:         all .3s ease-in-out;
+}
+
+time {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #a0a0a0;
+}
+
+.post-title,
+.featured-title {
+	font-family: 'Rage', cursive;
+}
+
+/* =============== Layouts =============== */
+.postbar {
+    width: 73.30508474576271%;
+}
+
+.sidebar {
+    width: 22.45762711864407%;
+}
+
+.postbar.fullwidth {
+    width: 100%;
+    float:left;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1210px) {
+    .container {
+        width: 1210px;
+    }
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col1,.col2,.col3,.col4,.col5,.col6,
+.col7,.col8,.col9,.col10,.col11,.col12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+.col12 {
+    width: 100%;
+}
+
+.col11 {
+    width: 91.66666667%;
+}
+
+.col10 {
+    width: 83.33333333%;
+}
+
+.col9 {
+    width: 75%;
+}
+
+.col8 {
+    width: 66.66666667%;
+}
+
+.col7 {
+    width: 58.33333333%;
+}
+
+.col6 {
+    width: 50%;
+}
+
+.col5 {
+    width: 41.66666667%;
+}
+
+.col4 {
+    width: 33.33333333%;
+}
+
+.col3 {
+    width: 25%;
+}
+
+.col2 {
+    width: 16.66666667%;
+}
+
+.col1 {
+    width: 8.33333333%;
+}
+
+.clearfix:before,
+.clearfix:after,
+.content-row:before,
+.content-row:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after,
+.content-row:after,
+.container:after,
+.container-fluid:after,
+.row:after {
+    clear: both;
+}
+
+.textright {
+    text-align: right;
+}
+
+.textleft {
+    text-align: left;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.pull-right { float: right; }
+.pull-left { float: left; }
