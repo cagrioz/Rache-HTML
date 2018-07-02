@@ -305,3 +305,61 @@ time {
 
 .pull-right { float: right; }
 .pull-left { float: left; }
+
+/* =============== Hover Settings =============== */
+.rache-menu a:hover {
+    color: #eec7bc;
+}
+
+
+/* =============== Rache Header =============== */
+.rache-header {
+	float: left;
+	width: 100%;
+}
+
+.rache-logo {
+	text-align: center;
+	margin: 60px auto;
+}
+
+.rache-menu {
+	position: relative;
+	width: 100%;
+    -webkit-box-shadow: 0 0 1px rgba(238,199,188, .55);
+    box-shadow:         0 0 1px rgba(238,199,188, .55);
+    text-align: center;
+}
+
+.main-menu li {
+	display: inline-block;
+    margin-right: 20px;
+}
+
+.rache-menu .main-menu a {
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding: 20px 10px;
+	letter-spacing: 1.2px;
+	font-weight: 400;
+}
+
+.menu-btn,
+.search-btn {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform:         translateY(-50%);
+    padding: 13px 15px;
+    cursor: pointer;
+}
+.menu-btn {left: 0;}
+.search-btn {right: 0;}
+
+.menu-btn img {height: 22px;}
+.search-btn img {height: 20px;}
+.menu-btn img,
+.search-btn img {
+    width: auto;
+}
