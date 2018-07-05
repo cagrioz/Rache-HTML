@@ -19,35 +19,35 @@
 
 /* =============== Fonts =============== */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Lato|Montserrat:100,200,300,600,700|Playfair+Display:400i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:100,200,300,600,700|Playfair+Display:400i');
 
 @font-face {
     font-family: 'GothamPro';
-    src: url(fonts/GothamPro.otf) format('OpenType');
-    src: url(fonts/GothamPro.ttf) format('truetype');
-    src: url(fonts/GothamPro.woff) format('woff');
+    src: url(../fonts/GothamPro.otf) format('OpenType');
+    src: url(../fonts/GothamPro.ttf) format('truetype');
+    src: url(../fonts/GothamPro.woff) format('woff');
 }
 
 @font-face {
     font-family: 'GothamPro';
-    src: url(fonts/GothamPro-Medium.otf) format('OpenType');
-    src: url(fonts/GothamPro-Medium.ttf) format('truetype');
-    src: url(fonts/GothamPro-Medium.woff) format('woff');
+    src: url(../fonts/GothamPro-Medium.otf) format('OpenType');
+    src: url(../fonts/GothamPro-Medium.ttf) format('truetype');
+    src: url(../fonts/GothamPro-Medium.woff) format('woff');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'GothamPro';
-    src: url(fonts/GothamPro-Bold.otf) format('OpenType');
-    src: url(fonts/GothamPro-Bold.ttf) format('truetype');
-    src: url(fonts/GothamPro-Bold.woff) format('woff');
+    src: url(../fonts/GothamPro-Bold.otf) format('OpenType');
+    src: url(../fonts/GothamPro-Bold.ttf) format('truetype');
+    src: url(../fonts/GothamPro-Bold.woff) format('woff');
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'Rage';
-    src: url(fonts/RageItalic.ttf) format("truetype");
-    src: url(fonts/RageItalic.woff) format("woff");
+    src: url(../fonts/RageItalic.ttf) format("truetype");
+    src: url(../fonts/RageItalic.woff) format("woff");
 }
 
 /* =============== Reset CSS =============== */
@@ -112,6 +112,7 @@ body {
     float: left;
     width: 100%;
     position: relative;
+    overflow-x: hidden;
     font-family: 'GothamPro', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -123,9 +124,17 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'GothamPro', sans-serif;
 }
 
+h1 {font-size: 40px;}
+h2 {font-size: 30px;}
+h3 {font-size: 25px;}
+h4 {font-size: 19px;}
+h5 {font-size: 15px;}
+h6 {font-size: 11px;}
+
 p {
 	font-family: 'Open Sans', sans-serif;
-    line-height: 15px;
+    line-height: 22px;
+    font-size: 15px;
     color: #606060;
     letter-spacing: 0;
     word-spacing: 1.5px;
@@ -160,16 +169,21 @@ time {
 .featured-title {
 	font-family: 'Rage', cursive;
 }
+.featured-title {font-size: 72px;}
+.featured-title a {color: #fff;}
+.post-title {font-size: 58px;}
 
 /* =============== Layouts =============== */
-.postbar {
-    width: 73.30508474576271%;
+.rache-header,
+.rache-featured,
+.rache-content,
+.rache-footer {
+    float: left;
+    width: 100%;
 }
 
-.sidebar {
-    width: 22.45762711864407%;
-}
-
+.postbar {width: 73.30508474576271%;}
+.sidebar {width: 22.45762711864407%;}
 .postbar.fullwidth {
     width: 100%;
     float:left;
@@ -311,12 +325,8 @@ time {
     color: #eec7bc;
 }
 
-
 /* =============== Rache Header =============== */
-.rache-header {
-	float: left;
-	width: 100%;
-}
+.rache-header {margin-bottom: 40px;}
 
 .rache-logo {
 	text-align: center;
@@ -363,3 +373,449 @@ time {
 .search-btn img {
     width: auto;
 }
+
+/* =============== Rache Featured =============== */
+.rache-featured {margin-bottom: 70px;}
+
+.rache-featured .featured-carousel {
+    float: left;
+    margin: 0 -12.928%;
+    width: 125.856%;
+    position: relative;
+}
+
+.featured-post {position: relative;}
+.featured-post img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit:    cover;
+}
+
+.featured-post .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(22, 0, 4, .5);
+    -webkit-transition: all .3s ease-in-out;
+    transition:         all .3s ease-in-out;
+}
+.center.active .img-overlay {background-color: rgba(22, 0, 4, .3);}
+
+.featured-overlay {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: all .45s ease-in-out;
+    transition:         all .45s ease-in-out;
+    -webkit-transform: translate(-50%, -50%);
+    transform:         translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+}
+.center.active .featured-overlay {opacity: 1;visibility: visible;}
+
+.featured-post .post-meta img {
+    height: 14px;
+    width: auto;
+    display: inline;
+    cursor: pointer;
+}
+
+.featured-post .share {
+    display: inline-block;
+    margin: 0 0 0 12px;
+}
+.featured-post .share-popup {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .3s ease-in-out;
+    transition:         all .3s ease-in-out;
+    background-color: #fff;
+}
+
+.featured-post .cat {
+    margin-bottom: 21px;
+    display: inline-block;
+}
+.featured-post .post-meta {
+    margin-top: 9px;
+    display: inline-block;
+}
+
+.featured-post .comment-count {color: #fff;}
+
+/* =============== Post Elements =============== */
+.cat {
+    display: block;
+    font-size: 0;
+    z-index: 999;
+}
+
+.cat a {
+    display: inline-block;
+    color: #fff;
+    background-color: #eec7bc;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-family: 'GothamPro', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: -.5px;
+    z-index: 999;
+    margin-right: 12px;
+}
+.cat a:last-child {margin-right: 0;}
+
+.post .comment img {
+    height: 15px;
+    width: auto;
+}
+.comment-count {
+    color: #777;
+    font-size: 12px;
+    display: inline;
+    margin-left: 6px;
+}
+
+/* =============== Rache Main =============== */
+
+.post {
+    text-align: center;
+    font-size: 0;
+}
+.post i {font-size: 15px;}
+
+.post-media {position: relative;}
+
+.postbar .post:last-child {margin-bottom: 0!important;}
+
+/* ------ List Post ------ */
+.post.list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin: 40px 0;
+    text-align: center!important;
+}
+.post.list:first-child {margin-top: 0;}
+
+.post.featured + .post.list {margin-top: 50px;}
+.post.list + .post.featured {margin-top: 10px;}
+
+.post.list .post-content {align-self: center;}
+
+.post.list .post-media {padding-right: 40px;}
+.post.list.img-right .post-media {
+    -webkit-order: 1;
+    -moz-order: 1;
+    -ms-order: 1;
+    -o-order: 1;
+    order: 1;
+    padding: 0 0 0 40px;
+}
+
+.post.list .post-title,
+.post.list .comment,
+.post.list .share a {
+    margin-top: 20px;
+}
+.post.list .post-text {margin-top: 5px;}
+
+.post.list .share a {
+    color: #777;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+.post.list .share a:last-child {margin-right: 0;}
+
+.post.list .share i {line-height: 30px;}
+
+/* ------ Featured Post ------ */
+.post .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(22, 0, 4, .5);
+    -webkit-transition: all .3s ease-in-out;
+    transition:         all .3s ease-in-out;
+}
+
+.post-overlay {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform:         translate(-50%, -50%);
+    visibility: hidden;
+}
+.post-overlay *  {visibility: visible;}
+
+.post .post-meta img {
+    height: 14px;
+    width: auto;
+    display: inline;
+    cursor: pointer;
+}
+
+.post.featured .post-title a {color: #fff;}
+
+.post.featured .share {
+    display: inline-block;
+    margin: 0 0 0 12px;
+}
+
+.post.featured .cat {
+    margin-bottom: 21px;
+    display: inline-block;
+}
+
+.post.featured .post-meta {
+    margin-top: 9px;
+    display: inline-block;
+}
+
+.post.featured .comment-count {color: #fff;}
+
+.post.featured .share-popup {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .3s ease-in-out;
+    transition:         all .3s ease-in-out;
+    background-color: #fff;
+}
+
+/* ------ Post Pagination ------ */
+
+
+/* =============== Rache Sidebar =============== */
+.widget {
+    margin-bottom: 50px;
+    float: left;
+    width: 100%;
+}
+.widget:last-child {margin-bottom: 0;}
+
+.widget-title {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.widget-title h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    word-spacing: -1px;
+    color: #5c5959;
+}
+
+/* ------ Widget > About ------ */
+.about-content {
+    position: relative;
+    text-align: center;
+}
+
+.about-content .img-overlay {
+    position: absolute;
+    content: '';
+    background-color: rgba(22, 0, 4, .35);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 300ms ease-in-out;
+    transition:         all .3s ease-in-out;
+}
+.about-content:hover .img-overlay {background-color: rgba(22, 0, 4, .25);}
+
+.about-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+.about-overlay a {
+    color: #fff;
+    display: block;
+}
+
+.about-overlay h3 a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: .7px;
+    word-spacing: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.about-overlay p a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-top: 3px;
+    font-size: 13px;
+    letter-spacing: .7px;
+}
+
+/* ------ Widget > Popular Posts ------ */
+.popular-post {
+    float: left;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+}
+.popular-post:last-child {margin-bottom: 0px;}
+
+.popular-post img {
+    float: left;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.popular-overlay {
+    position: absolute;
+    top: 50%;
+    background-color: #fff;
+    padding: 10px;
+    right: -75px;
+    width: 167px;
+    transform: translateY(-50%);
+}
+.popular-overlay h5 {
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top: 7px;
+    font-weight: 500;
+}
+.popular-overlay .cat a {
+    display: inline-block;
+    font-size: 9px;
+    padding: 4px 5px 3px 7px;
+}
+
+/* =============== Rache Footer =============== */
+.rache-footer {margin-top: 70px;}
+
+.copyright {
+    line-height: 50px;
+    border-top: 1px solid #eaeaea;
+    color: #333;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 75px;
+}
+
+/* ------ Footer Social ------ */
+.footer-social {
+    text-align: center;
+    margin-top: 57px;
+}
+
+.footer-social .social-profiles {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-social .social-profiles a {
+    position: relative;
+    display: inline-block;
+    padding: 18px 35px 0 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    line-height: 36px;
+    margin-right: 0;
+    align-items: center;
+}
+
+.footer-social .social-profiles a:hover {color: #000;}
+.footer-social .social-profiles i:hover {color: #333;}
+
+.footer-social a:after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    width: 75px;
+    height: 36px;
+    top: 50%;
+    margin-top: -9px;
+    background-color: #f5ded7;
+    z-index: -1;
+    transition: all 300ms ease-in-out;
+}
+
+.footer-social a:hover:after {
+    background-color: #eec7bc;
+}
+
+.footer-social i {
+    margin-right: 15px;
+    color: #444;
+}
+
+/* ------ Footer Instagram ------ */
+.footer-instagram {overflow: hidden;text-align: center;}
+
+.instagram-img {z-index: 0;}
+.footer-instagram .instagram-feed-widget { width: 100%; padding: 0; position: relative; }
+
+.footer-instagram .instagram-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.footer-instagram .insta-user {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform:         translate(-50%, -50%);
+}
+
+.footer-instagram .insta-user a {
+    position: relative;
+    font-weight: 400;
+    color: #555;
+    display: block;
+    padding: 9px 15px;
+    background-color: #fff;
+    border: 1px dashed #eec7bc;
+}
+
+.footer-instagram .insta-user a:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    z-index: -9;
+    background-color: #fff;
+}
+
+.footer-instagram .instagram-img a {overflow: hidden;}
+.footer-instagram .instagram-img img {transition: all 300ms ease-in-out;}
+.footer-instagram .instagram-img a:hover img {transform: scale(1.09);}
